@@ -23,7 +23,7 @@ st.title("Baltimore City Crime Map")
 
 @st.cache
 def getData():
-    data = pd.read_csv('/Users/asbarton1/pythonPlayground/BPDCrimeData.csv')
+    data = pd.read_csv('./BPDCrimeData.csv')
     data.columns = map(str.lower, data.columns)
     data['crimedate'] = pd.to_datetime(data['crimedate'], utc=True)
     data['month'] = pd.to_datetime(data['crimedate']).dt.strftime('%m-%Y')
